@@ -33,18 +33,40 @@
     --button-bg-color-error: var(--color-error-500);
     --button-bg-color-primary: var(--color-primary-500);
     --color-neutral-500: #667085;
+
 }
 
 * {
     box-sizing: border-box;
+
+
 }
 
 html {
     font-family: 'Poppins';
+    min-height: 100%;
+
 }
+
+body {
+    margin: 0;
+    min-height: 100%;
+    background-image: url(img/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(3px);
+}
+
+
 
 button {
     cursor: pointer;
+}
+
+.main {
+    padding-top: 64px;
+    min-height: 100%;
 }
 
 
@@ -54,7 +76,7 @@ button {
     max-width: 460px;
     flex-direction: column;
     align-items: center;
-    margin: 64px auto 0;
+    margin: 0 auto;
     border-radius: 16px;
     background: #FFFFFF;
     box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.06);
@@ -64,7 +86,6 @@ button {
 .card__thumbnail {
     width: 460px;
     height: 250px;
-
 }
 
 .card__title {
@@ -101,6 +122,11 @@ button {
     visibility: hidden;
 }
 
+.card__edit {
+    opacity: 0;
+    visibility: hidden;
+}
+
 .card-item {
 
     height: 52px;
@@ -115,6 +141,11 @@ button {
 }
 
 .card-item:hover .card__icon {
+    opacity: 1;
+    visibility: visible;
+}
+
+.card-item:hover .card__edit {
     opacity: 1;
     visibility: visible;
 }
@@ -144,10 +175,10 @@ button {
     vertical-align: middle;
 }
 
-/* .card__button:active {
+.card__button:active {
     background: var(--color-primary-600);
     transition: background 0s;
-} */
+}
 
 .card__input {
     color: var(--color-neutral-500);
@@ -204,10 +235,53 @@ button {
     height: 24px;
 }
 
-.card__checkbox {
+.card__edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: transparent;
+    border: none !important;
+    font-size: 0;
+    border-radius: var(--button-border-radius);
+    transition: all 0.3s ease;
+    width: 32px;
+    height: 32px;
+    margin-left: 12px;
 
-    width: 18px;
-    height: 18px;
-    color: var(--color-neutral-600);
+}
 
+.card__edit:hover {
+    background-color: var(--color-error-50);
+}
+
+.card__edit:active {
+
+    background-color: var(--color-error-100);
+}
+
+.card__pencil {
+    width: 20px;
+    height: 20px;
+
+
+}
+
+.custom-checkbox__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+}
+
+.custom-checkbox {
+    width: 24px;
+    height: 24px;
+    background-image: url(/img/checkboxUnchecked.svg);
+    cursor: pointer;
+}
+
+.custom-checkbox:has(.custom-checkbox__input:checked) {
+    background-image: url(/img/checkboxChecked.svg);
 }

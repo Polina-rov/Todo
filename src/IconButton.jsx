@@ -1,7 +1,8 @@
 export default function IconButton({ onClick }) {
   return (
     <button className="card__icon" onClick={onClick}>
-      <svg className="card__trash"
+      <svg
+        className="card__trash"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"

@@ -1,10 +1,12 @@
 export default function Checkbox({ onChange, checked }) {
   return (
-    <input
-      className="card__checkbox"
-      type="checkbox"
-      onChange={onChange}
-      checked={checked}
-    ></input>
+    <label className="custom-checkbox">
+      <input
+        className="custom-checkbox__input"
+        type="checkbox"
+        onChange={onChange}
+        checked={checked}
+      />
+    </label>
   );
 }

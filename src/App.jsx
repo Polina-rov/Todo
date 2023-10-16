@@ -4,9 +4,9 @@ import Card from './Card';
 
 function App() {
   return (
-    <>
+    <section className="main">
       <Card />
-    </>
+    </section>
   );
 }
 
