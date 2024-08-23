@@ -1,1 +1,1 @@
-Приложение доступно по ссылке: todo-polina-rov.vercel.app
+Приложение доступно по ссылке: https://todo-polina-rov.vercel.app
